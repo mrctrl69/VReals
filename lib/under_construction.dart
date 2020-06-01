@@ -10,26 +10,32 @@ class Construction extends StatelessWidget {
           automaticallyImplyLeading: false,
           backgroundColor: Colors.white10,
           elevation: 0,
-          leading: InkWell(
-            child: Image.asset(
-              'assets/images/wp_back_button_icon.png',
-              height: 250,
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          actions: <Widget>[
-            InkWell(
+          leading: Container(
+            padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+            child: InkWell(
               child: Image.asset(
-                'assets/images/wp_gallery_button_icon.png',
+                'assets/images/wp_back_button_icon.png',
                 height: 250,
               ),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Gallery()));
+                Navigator.pop(context);
               },
+            ),
+          ),
+          actions: <Widget>[
+            Container(
+              padding: EdgeInsets.fromLTRB(0, 20, 20, 0),
+              child: InkWell(
+                child: Image.asset(
+                  'assets/images/wp_gallery_button_icon.png',
+                  height: 250,
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Gallery()));
+                },
+              ),
             ),
           ],
         ),

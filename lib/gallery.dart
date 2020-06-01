@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
 
 class Gallery extends StatelessWidget {
-
-  @override 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Colors.white10,
           elevation: 0,
-          leading: InkWell(
-            child: Image.asset(
-              'assets/images/wp_back_button_icon.png',
-              height: 250,
+          leading: Container(
+            padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+            child: InkWell(
+              child: Image.asset(
+                'assets/images/wp_back_button_icon.png',
+                height: 250,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            onTap: (){
-              Navigator.pop(context);
-            },
           ),
-
         ),
-      body: SafeArea(child: Center(
-
-      ))
-    );
+        body: SafeArea(child: Center()));
   }
 }

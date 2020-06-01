@@ -14,27 +14,33 @@ class HomePage extends StatelessWidget {
           automaticallyImplyLeading: false,
           backgroundColor: Colors.white10,
           elevation: 0,
-          leading: InkWell(
-            child: Image.asset(
-              'assets/images/wp_back_button_icon.png',
-              height: 250,
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          actions: <Widget>[
-            InkWell(
+          leading: Container(
+            padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+            child: InkWell(
               child: Image.asset(
-                'assets/images/wp_gallery_button_icon.png',
+                'assets/images/wp_back_button_icon.png',
                 height: 250,
               ),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Gallery()),
-                );
+                Navigator.pop(context);
               },
+            ),
+          ),
+          actions: <Widget>[
+            Container(
+              padding: EdgeInsets.fromLTRB(0, 20, 20, 0),
+              child: InkWell(
+                child: Image.asset(
+                  'assets/images/wp_gallery_button_icon.png',
+                  height: 250,
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Gallery()),
+                  );
+                },
+              ),
             )
           ],
         ),
@@ -43,9 +49,12 @@ class HomePage extends StatelessWidget {
                 child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset(
-              'assets/images/wp_logo.png',
-              height: 250,
+            Hero(
+              tag: 'logo',
+              child: Image.asset(
+                'assets/images/wp_logo.png',
+                height: 250,
+              ),
             ),
             Container(
               height: 275,
@@ -83,7 +92,8 @@ class HomePage extends StatelessWidget {
                   ),
                   Positioned(
                     top: 115,
-                    left: 125,
+                    left: 10,
+                    right: 10,
                     child: InkWell(
                       onTap: () {
                         Navigator.push(
