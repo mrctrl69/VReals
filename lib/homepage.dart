@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => ArPage()),
+                            MaterialPageRoute(builder: (context) => Construction()),
                           );
                         },
                         child: Image.asset(
